@@ -15,7 +15,6 @@ class CollectionSerializer(serializers.ModelSerializer):
             'description',
             'date_of_created',
             'date_of_changed',
-            'slug',
         )
 
 class LinkSerializer(serializers.ModelSerializer):
@@ -33,6 +32,16 @@ class LinkSerializer(serializers.ModelSerializer):
             'type_of_link',
             'date_of_created',
             'date_of_changed',
-            'slug',
+            'collection',
+        )
+
+class CreateLinkSerializer(serializers.ModelSerializer):
+    """
+    Serializer for create Links
+    """
+    class Meta:
+        model = Link
+        fields = (
+            'url_field',
             'collection',
         )

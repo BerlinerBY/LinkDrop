@@ -9,7 +9,7 @@ class Collection(models.Model):
     description = models.CharField(max_length=350, blank=True, default="")
     date_of_created = models.DateTimeField(auto_now_add=True)
     date_of_changed = models.DateTimeField(auto_now=True)
-    slug = models.SlugField(unique=True, blank=True)
+    # slug = models.SlugField(unique=True, blank=True)
     created_by = models.ForeignKey(
         User, 
         on_delete=models.CASCADE, 
@@ -36,7 +36,7 @@ class Link(models.Model):
     date_of_created = models.DateTimeField(auto_now_add=True)
     date_of_changed = models.DateTimeField(auto_now=True)
     
-    slug = models.SlugField(unique=True, max_length=255, blank=True)
+    # slug = models.SlugField(unique=True, max_length=255, blank=True)
     collection = models.ForeignKey(
             Collection, 
             on_delete=models.CASCADE,

@@ -15,6 +15,13 @@ class UserSerializer(serializers.ModelSerializer):
         user.save()
         return user
 
+class LoginUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = (
+            'password',
+            'email',
+        )
 
 class ChangePasswordSerializer(serializers.Serializer):
     old_password = serializers.CharField(required=True)
