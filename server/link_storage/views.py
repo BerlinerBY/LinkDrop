@@ -279,7 +279,7 @@ def create_link(request):
         user = request.user
         if user.is_authenticated:
             from .utilities import get_open_graph_data
-            data = get_open_graph_data(request.data["url"])
+            data = get_open_graph_data(request.data["url_field"])
             data["collection"] = request.data["collection"]
             serializer = LinkSerializer(data=data)
             if serializer.is_valid():
